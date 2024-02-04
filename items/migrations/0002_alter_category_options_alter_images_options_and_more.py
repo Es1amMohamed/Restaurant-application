@@ -6,20 +6,20 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('items', '0001_initial'),
+        ("items", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='category',
-            options={'verbose_name_plural': 'Categories'},
+            name="category",
+            options={"verbose_name_plural": "Categories"},
         ),
         migrations.AlterModelOptions(
-            name='images',
-            options={'verbose_name_plural': 'Images'},
+            name="images",
+            options={"verbose_name_plural": "Images"},
         ),
         migrations.AlterModelOptions(
-            name='items',
-            options={'ordering': ['item_name'], 'verbose_name_plural': 'Items'},
+            name="items",
+            options={"ordering": ["item_name"], "verbose_name_plural": "Items"},
         ),
     ]

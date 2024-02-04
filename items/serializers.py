@@ -1,12 +1,20 @@
 from rest_framework import serializers
 from .models import *
 
+
 class ItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Items
-        exclude = ['slug']
-        
+        exclude = ["slug"]
+
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        exclude = ["id"]
+
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Images
+        exclude = ["id"]
