@@ -14,7 +14,7 @@ class ItemsList(viewsets.ModelViewSet):
 
     queryset = Items.objects.all()
     serializer_class = ItemsSerializer
-    permission_classes = [IsAuthenticated]
+    
 
 
 class Categories(viewsets.ModelViewSet):
