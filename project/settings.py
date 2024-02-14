@@ -152,16 +152,16 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "staticfiles",
 ]
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STORAGES ={
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STORAGES ={
-
-    'staticfiles': {
-    'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
-    }
-    }
+#     'staticfiles': {
+#     'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+#     }
+#     }
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Default primary key field type
