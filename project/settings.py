@@ -153,18 +153,28 @@ STATICFILES_DIRS = [
     BASE_DIR / "staticfiles",
 ]
 if not DEBUG:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STORAGES ={
 
-#     'staticfiles': {
-#     'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
-#     }
-#     }
+
+
+
+
+
+# DEFAULT_FILE_STORAGE = 'django.core.files.storage.MediaStorage'
+
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.MultiPartParser',  # لدعم رفع الملفات
+    ],
+}
