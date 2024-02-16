@@ -154,7 +154,7 @@ STATICFILES_DIRS = [
 ]
 if not DEBUG:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "/opt/render/project/src/images/")
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
