@@ -165,7 +165,7 @@ if not DEBUG:
 
 # DEFAULT_FILE_STORAGE = 'django.core.files.storage.MediaStorage'
 
-MEDIA_URL = "/media/"
+#MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
